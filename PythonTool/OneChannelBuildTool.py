@@ -16,7 +16,10 @@ def pack(source,dest,channel_id):
     # 初始化渠道信息
     empty_channel_file = "META-INF/fengbaochannel_{channel}".format(channel = target_channel)
     # 写入渠道信息
-    src_empty_file = 'info/czt.txt'
+    src_empty_file = 'empty'
+    if not os.path.exists(src_empty_file):
+    	open(src_empty_file, 'a').close()
+
     zipped.write(src_empty_file, empty_channel_file)
     # 关闭zip流
     zipped.close()
