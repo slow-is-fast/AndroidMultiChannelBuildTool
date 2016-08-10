@@ -23,14 +23,14 @@ def pack(source,dest,channel_id):
 
 def usage():
 	print "Usage:"
-	print "\tpython OneChannelBuildTool source dest channel_id\n"
+	print "\tpython OneChannelBuildTool.py source dest channel_id\n"
 	print "\tsource: full path of apk to pack"
 	print "\tdest: full path of packed apk file"
 	print "\tchannel_id: int or string represent for specifical channel"
 	print "\n"
 
 	print "example:"
-	print "\tpython OneChannelBuildTool /tmp/a.apk /tmp/b.apk 110\n"
+	print "\tpython OneChannelBuildTool.py /tmp/a.apk /tmp/b.apk 110\n"
 
 if __name__ == '__main__':
 	args = sys.argv
