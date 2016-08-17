@@ -14,7 +14,7 @@ def pack(source,dest,channel_id):
     # zip获取新建立的apk文件
     zipped = zipfile.ZipFile(target_apk, 'a', zipfile.ZIP_DEFLATED)
     # 初始化渠道信息
-    empty_channel_file = "META-INF/fengbaochannel_{channel}".format(channel = target_channel)
+    empty_channel_file = "META-INF/{channel}".format(channel = target_channel)
     # 写入渠道信息
     src_empty_file = 'empty'
     if not os.path.exists(src_empty_file):
@@ -26,14 +26,14 @@ def pack(source,dest,channel_id):
 
 def usage():
 	print "Usage:"
-	print "\tpython OneChannelBuildTool.py source dest channel_id\n"
+	print "\tpython OneChannelBuildTool.py source dest channel\n"
 	print "\tsource: full path of apk to pack"
 	print "\tdest: full path of packed apk file"
 	print "\tchannel_id: int or string represent for specifical channel"
 	print "\n"
 
 	print "example:"
-	print "\tpython OneChannelBuildTool.py /tmp/a.apk /tmp/b.apk 110\n"
+	print "\tpython OneChannelBuildTool.py /tmp/a.apk /tmp/b.apk fengbaochannel_110\n"
 
 if __name__ == '__main__':
 	args = sys.argv
